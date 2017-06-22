@@ -2,26 +2,27 @@ package de.rainer.buchstabensalat.gui.button.actionlistener;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.JDialog;
+import de.rainer.buchstabensalat.gui.dialog.SchwierigkeitDialog;
 
-public abstract class AActionListenerInklSchwierigkeitDialog implements ActionListener {
+public abstract class AActionListenerInklSchwierigkeitDialog implements
+		ActionListener {
 
-	private JDialog dialog;
+	private SchwierigkeitDialog dialog;
 
-	protected JDialog getDialog() {
+	protected SchwierigkeitDialog getDialog() {
 		return this.dialog;
 	}
 
-	protected void setDialog(JDialog dialog) {
+	protected void setDialog(SchwierigkeitDialog dialog) {
 		this.dialog = dialog;
 	}
 
-	public AActionListenerInklSchwierigkeitDialog(JDialog dialog) {
+	public AActionListenerInklSchwierigkeitDialog(SchwierigkeitDialog dialog) {
 		super();
 		this.setDialog(dialog);
 	}
 
 	public AActionListenerInklSchwierigkeitDialog() {
-		this(new JDialog());
+		this(new SchwierigkeitDialog());
 	}
 }

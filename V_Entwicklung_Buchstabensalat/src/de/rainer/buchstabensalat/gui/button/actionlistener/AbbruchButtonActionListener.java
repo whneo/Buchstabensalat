@@ -3,12 +3,12 @@ package de.rainer.buchstabensalat.gui.button.actionlistener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowEvent;
 
-import javax.swing.JDialog;
+import de.rainer.buchstabensalat.gui.dialog.SchwierigkeitDialog;
 
 public final class AbbruchButtonActionListener extends
 		AActionListenerInklSchwierigkeitDialog {
 
-	public AbbruchButtonActionListener(JDialog dialog) {
+	public AbbruchButtonActionListener(SchwierigkeitDialog dialog) {
 		super(dialog);
 	}
 
