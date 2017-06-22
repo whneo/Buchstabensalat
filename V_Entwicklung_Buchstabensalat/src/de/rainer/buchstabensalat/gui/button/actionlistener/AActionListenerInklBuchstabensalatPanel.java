@@ -1,11 +1,12 @@
-package de.rainer.buchstabensalat.gui.listener.actionlistener;
+package de.rainer.buchstabensalat.gui.button.actionlistener;
 
 import java.awt.event.ActionListener;
 
+import de.rainer.buchstabensalat.data.IDataProvider;
 import de.rainer.buchstabensalat.gui.panel.BuchstabensalatPanel;
 
 public abstract class AActionListenerInklBuchstabensalatPanel implements
-		ActionListener {
+		IDataProvider, ActionListener {
 
 	private BuchstabensalatPanel bsp;
 

@@ -1,4 +1,4 @@
-package de.rainer.buchstabensalat.gui.button.buttonactionlistener;
+package de.rainer.buchstabensalat.gui.button.actionlistener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

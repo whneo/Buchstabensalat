@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.gui.button;
 import java.awt.Color;
 import java.awt.Point;
 
-import de.rainer.buchstabensalat.gui.button.buttonactionlistener.ExitButtonActionListener;
+import de.rainer.buchstabensalat.gui.button.actionlistener.ExitButtonActionListener;
 
 public final class ExitButton extends FieldButton {
 

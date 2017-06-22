@@ -4,7 +4,7 @@ import java.awt.Font;
 
 import javax.swing.JDialog;
 
-import de.rainer.buchstabensalat.gui.button.buttonactionlistener.AbbruchButtonActionListener;
+import de.rainer.buchstabensalat.gui.button.actionlistener.AbbruchButtonActionListener;
 
 public final class AbbruchButton extends MainButton {
 

@@ -1,13 +1,11 @@
-package de.rainer.buchstabensalat.gui.button.buttonactionlistener;
+package de.rainer.buchstabensalat.gui.button.actionlistener;
 
 import java.awt.event.ActionEvent;
 
-import de.rainer.buchstabensalat.data.IDataProvider;
-import de.rainer.buchstabensalat.gui.listener.actionlistener.AActionListenerInklBuchstabensalatPanel;
 import de.rainer.buchstabensalat.gui.panel.BuchstabensalatPanel;
 
 public final class SessionContinueButtonActionListener extends
-		AActionListenerInklBuchstabensalatPanel implements IDataProvider {
+		AActionListenerInklBuchstabensalatPanel {
 
 	public SessionContinueButtonActionListener(BuchstabensalatPanel bsp) {
 		super(bsp);

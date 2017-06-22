@@ -2,7 +2,7 @@ package de.rainer.buchstabensalat.gui.button;
 
 import java.awt.Font;
 
-import de.rainer.buchstabensalat.gui.button.buttonactionlistener.BeendenButtonActionListener;
+import de.rainer.buchstabensalat.gui.button.actionlistener.BeendenButtonActionListener;
 
 public final class BeendenButton extends MainButton {
 
