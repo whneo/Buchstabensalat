@@ -21,4 +21,8 @@ public abstract class AFieldLabel extends JLabel {
 		this.setBounds(xPosition, 300, 200, 200);
 		this.setBackground(bgColor);
 	}
+
+	public AFieldLabel() {
+		this("?", Color.BLACK, -1);
+	}
 }

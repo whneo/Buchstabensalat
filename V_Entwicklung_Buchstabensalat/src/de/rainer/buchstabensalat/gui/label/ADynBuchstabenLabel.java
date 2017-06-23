@@ -1,14 +1,10 @@
 package de.rainer.buchstabensalat.gui.label;
 
-import java.awt.Font;
 import java.awt.Point;
-
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 import de.rainer.buchstabensalat.data.DataProvider;
 
-public abstract class ADynBuchstabenLabel extends JLabel {
+public abstract class ADynBuchstabenLabel extends ABuchstabenLabel {
 
 	private static final long serialVersionUID = -9068158652150571367L;
 
@@ -33,14 +29,10 @@ public abstract class ADynBuchstabenLabel extends JLabel {
 
 	public ADynBuchstabenLabel(String text) {
 		super(text);
-		this.setFont(new Font("Tahoma", Font.BOLD, 40));
-		this.setHorizontalAlignment(SwingConstants.CENTER);
-		this.setOpaque(true);
-		this.setFocusable(false);
 	}
 
 	public ADynBuchstabenLabel() {
-		this("?");
+		this("");
 	}
 
 	protected Point createCords() {

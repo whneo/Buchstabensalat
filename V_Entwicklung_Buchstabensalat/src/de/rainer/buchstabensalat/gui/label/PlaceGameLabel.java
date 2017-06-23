@@ -13,11 +13,14 @@ public final class PlaceGameLabel extends AStatBuchstabenLabel {
 	private static final long serialVersionUID = 1L;
 
 	public PlaceGameLabel(int x, char text) {
-		super("" + text, Color.LIGHT_GRAY);
+		super(Color.LIGHT_GRAY);
 		if (DataProvider.getInstance().getPlaceList().size() != 0) {
 			x = DataProvider.getInstance().getPlaceList()
 					.get(DataProvider.getInstance().getPlaceList().size() - 1)
 					.getX() + 75;
+		}
+		if (text != '?') {
+			this.setText("" + text);
 		}
 		this.setBounds(x, 635, LETTER_LABEL_SIZE, LETTER_LABEL_SIZE);
 		DataProvider.getInstance().getPlaceList().add(this);

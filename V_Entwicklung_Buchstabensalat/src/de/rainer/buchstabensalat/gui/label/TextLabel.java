@@ -11,12 +11,10 @@ public final class TextLabel extends JLabel {
 	public TextLabel(String text, Font font, int hAlignment) {
 		super(text);
 		this.setFont(font);
-		this.setHorizontalAlignment(hAlignment);
+		if (hAlignment != -1) {
+			this.setHorizontalAlignment(hAlignment);
+		}
 		this.setFocusable(false);
-	}
-
-	public TextLabel() {
-		this(null, null, -1);
 	}
 
 	public TextLabel(String text, Font font) {

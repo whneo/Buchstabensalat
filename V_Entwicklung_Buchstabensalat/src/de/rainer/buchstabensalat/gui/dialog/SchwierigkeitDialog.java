@@ -41,19 +41,9 @@ public class SchwierigkeitDialog extends JDialog {
 		labelPanel.add(label);
 		GamePanel buttonPanel = new GamePanel(Color.WHITE);
 		SchwierigkeitButton lButton = new SchwierigkeitButton("leicht", this);
-		// lButton.addActionListener(new SchwierigkeitButtonActionListener(this));
-		// lButton.addKeyListener(new SchwierigkeitButtonActionListener(this));
 		SchwierigkeitButton mButton = new SchwierigkeitButton("mittel", this);
-		// mButton.addActionListener(new SchwierigkeitButtonActionListener(this));
-		// mButton.addKeyListener(new SchwierigkeitButtonActionListener(this));
 		SchwierigkeitButton sButton = new SchwierigkeitButton("schwer", this);
-		// sButton.addActionListener(new SchwierigkeitButtonActionListener(this));
-		// sButton.addKeyListener(new SchwierigkeitButtonActionListener(this));
-//		SchwierigkeitButton abbruch = new SchwierigkeitButton("abbruch", this);
 		AbbruchButton abbruch = new AbbruchButton(this);
-		// abbruch.addActionListener(new SchwierigkeitButtonActionListener(this,
-		// true));
-		// abbruch.addKeyListener(new SchwierigkeitButtonActionListener(this, true));
 		buttonPanel.add(lButton);
 		buttonPanel.add(mButton);
 		buttonPanel.add(sButton);
