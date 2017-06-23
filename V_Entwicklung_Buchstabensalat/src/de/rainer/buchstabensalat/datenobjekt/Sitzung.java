@@ -1,6 +1,6 @@
 package de.rainer.buchstabensalat.datenobjekt;
 
-import de.rainer.buchstabensalat.datenbank.WortsalatDbManager;
+import de.rainer.buchstabensalat.datenbank.DbManager;
 
 public class Sitzung {
 
@@ -94,8 +94,8 @@ public class Sitzung {
 				+ this.getBenutzer().toString() + ", schwierigkeit="
 				+ this.getSchwierigkeit().toString() + "]";
 	}
-	
+
 	public void save(Sitzung sitzung) {
-		WortsalatDbManager.getInstance().getDbh().insert(sitzung);
+		DbManager.getInstance().getDml().insert(sitzung);
 	}
 }

@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.datenobjekt;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import de.rainer.buchstabensalat.datenbank.WortsalatDbManager;
+import de.rainer.buchstabensalat.datenbank.DbManager;
 
 public class Lehrer {
 
@@ -58,7 +58,7 @@ public class Lehrer {
 
 	public Lehrer getLehrerById(int lehrer_id) {
 		Lehrer lehrer = new Lehrer();
-		ResultSet rst = WortsalatDbManager.getInstance().getDbh()
+		ResultSet rst = DbManager.getInstance().getDml()
 				.select("SELECT * FROM Lehrer WHERE lehrer_id = " + lehrer_id);
 		try {
 			while (rst.next()) {
@@ -69,8 +69,7 @@ public class Lehrer {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			WortsalatDbManager.getInstance().getDbh().getDbc()
-					.closeResultSet(rst);
+			DbManager.getInstance().getDbCon().closeResultSet(rst);
 		}
 		return lehrer;
 	}

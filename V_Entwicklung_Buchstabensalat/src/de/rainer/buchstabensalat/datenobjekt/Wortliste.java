@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import de.rainer.buchstabensalat.datenbank.WortsalatDbManager;
+import de.rainer.buchstabensalat.datenbank.DbManager;
 
 public class Wortliste {
 
@@ -56,9 +56,9 @@ public class Wortliste {
 
 	public Wortliste getWortlisteById(int wortliste_id) {
 		Wortliste wortliste = new Wortliste();
-		ResultSet rst = WortsalatDbManager
+		ResultSet rst = DbManager
 				.getInstance()
-				.getDbh()
+				.getDml()
 				.select("SELECT * FROM Wortliste WHERE wortliste_id = "
 						+ wortliste_id);
 		try {
@@ -71,8 +71,7 @@ public class Wortliste {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			WortsalatDbManager.getInstance().getDbh().getDbc()
-					.closeResultSet(rst);
+			DbManager.getInstance().getDbCon().closeResultSet(rst);
 		}
 		return wortliste;
 	}

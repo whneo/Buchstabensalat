@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.datenobjekt;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import de.rainer.buchstabensalat.datenbank.WortsalatDbManager;
+import de.rainer.buchstabensalat.datenbank.DbManager;
 
 public class Statistik {
 
@@ -48,7 +48,7 @@ public class Statistik {
 				.setBenutzer(statistik.getBenutzer().getBenutzerByLogin(login));
 		String query = "SELECT * FROM Sitzung WHERE benutzer_id = "
 				+ statistik.getBenutzer().getBenutzer_Id();
-		ResultSet rst = WortsalatDbManager.getInstance().getDbh().select(query);
+		ResultSet rst = DbManager.getInstance().getDml().select(query);
 		try {
 			rst.beforeFirst();
 			while (rst.next()) {
@@ -64,8 +64,7 @@ public class Statistik {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			WortsalatDbManager.getInstance().getDbh().getDbc()
-					.closeResultSet(rst);
+			DbManager.getInstance().getDbCon().closeResultSet(rst);
 		}
 		return statistik;
 	}

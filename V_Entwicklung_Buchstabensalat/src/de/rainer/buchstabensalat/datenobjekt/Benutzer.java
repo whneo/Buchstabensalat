@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.datenobjekt;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import de.rainer.buchstabensalat.datenbank.WortsalatDbManager;
+import de.rainer.buchstabensalat.datenbank.DbManager;
 
 public class Benutzer {
 
@@ -124,7 +124,7 @@ public class Benutzer {
 	public Benutzer getBenutzerByLogin(String login) {
 		Benutzer benutzer = new Benutzer();
 		String query = "SELECT * FROM Benutzer WHERE login = '" + login + "'";
-		ResultSet rst = WortsalatDbManager.getInstance().getDbh().select(query);
+		ResultSet rst = DbManager.getInstance().getDml().select(query);
 		try {
 			if (rst.next()) {
 				benutzer.setBenutzer_Id(rst.getInt("benutzer_id"));
@@ -143,8 +143,7 @@ public class Benutzer {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			WortsalatDbManager.getInstance().getDbh().getDbc()
-					.closeResultSet(rst);
+			DbManager.getInstance().getDbCon().closeResultSet(rst);
 		}
 		return benutzer;
 	}

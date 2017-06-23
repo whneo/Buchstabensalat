@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.datenobjekt;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import de.rainer.buchstabensalat.datenbank.WortsalatDbManager;
+import de.rainer.buchstabensalat.datenbank.DbManager;
 
 public class Schwierigkeit {
 
@@ -62,7 +62,7 @@ public class Schwierigkeit {
 		Schwierigkeit s = new Schwierigkeit();
 		String query = "SELECT * FROM Schwierigkeit WHERE name = '" + name
 				+ "'";
-		ResultSet rst = WortsalatDbManager.getInstance().getDbh().select(query);
+		ResultSet rst = DbManager.getInstance().getDml().select(query);
 		try {
 			if (rst.next()) {
 				s.setSchwierigkeit_id(rst.getInt("schwierigkeit_id"));
@@ -71,8 +71,7 @@ public class Schwierigkeit {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			WortsalatDbManager.getInstance().getDbh().getDbc()
-					.closeResultSet(rst);
+			DbManager.getInstance().getDbCon().closeResultSet(rst);
 		}
 		return s;
 	}

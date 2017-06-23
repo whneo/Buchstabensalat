@@ -7,37 +7,37 @@ import java.sql.Statement;
 
 import de.rainer.buchstabensalat.datenobjekt.Sitzung;
 
-public class WortsalatDbHandler {
+public final class DbManipulation {
 
-	private static WortsalatDbHandler instance;
-	private WortsalatDbConnector dbc;
+	private static DbManipulation instance;
+	private DbManager dbm;
 
-	static WortsalatDbHandler getInstance() {
-		if (WortsalatDbHandler.instance == null) {
-			WortsalatDbHandler.setInstance(new WortsalatDbHandler());
+	static DbManipulation getInstance() {
+		if (DbManipulation.instance == null) {
+			DbManipulation.setInstance(new DbManipulation());
 		}
-		return WortsalatDbHandler.instance;
+		return DbManipulation.instance;
 	}
 
-	private static void setInstance(WortsalatDbHandler instance) {
-		WortsalatDbHandler.instance = instance;
+	private static void setInstance(DbManipulation instance) {
+		DbManipulation.instance = instance;
 	}
 
-	public WortsalatDbConnector getDbc() {
-		return dbc;
+	DbManager getDbm() {
+		return dbm;
 	}
 
-	private void setDbc(WortsalatDbConnector dbc) {
-		this.dbc = dbc;
+	private void setDbm(DbManager dbm) {
+		this.dbm = dbm;
 	}
 
-	private WortsalatDbHandler(WortsalatDbConnector dbc) {
+	private DbManipulation(DbManager dbm) {
 		super();
-		this.setDbc(dbc);
+		this.setDbm(dbm);
 	}
 
-	private WortsalatDbHandler() {
-		this(WortsalatDbConnector.getInstance());
+	private DbManipulation() {
+		this(DbManager.getInstance());
 	}
 
 	public void insert(Sitzung sitzung) {
@@ -45,7 +45,7 @@ public class WortsalatDbHandler {
 		Statement st = null;
 		String sql = "INSERT INTO Sitzung (spielBeginn, spielEnde, richtigeWorte, falscheWorte, benutzer_id, schwierigkeit_id) VALUES (?, ?, ?, ?, ?, ?)";
 		try {
-			pst = this.getDbc().getCon().prepareStatement(sql);
+			pst = this.getDbm().getDbCon().getCon().prepareStatement(sql);
 			pst.setLong(1, sitzung.getSpielBeginn());
 			pst.setLong(2, sitzung.getSpielEnde());
 			pst.setInt(3, sitzung.getRichtigeWorte());
@@ -56,8 +56,8 @@ public class WortsalatDbHandler {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			this.getDbc().closePreparedStatement(pst);
-			this.getDbc().closeStatemant(st);
+			this.getDbm().getDbCon().closePreparedStatement(pst);
+			this.getDbm().getDbCon().closeStatemant(st);
 		}
 	}
 
@@ -65,7 +65,7 @@ public class WortsalatDbHandler {
 		Statement st = null;
 		ResultSet rst = null;
 		try {
-			st = this.getDbc().getCon().createStatement();
+			st = this.getDbm().getDbCon().getCon().createStatement();
 			rst = st.executeQuery(query);
 		} catch (SQLException e) {
 			e.printStackTrace();

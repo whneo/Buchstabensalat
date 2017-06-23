@@ -7,20 +7,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class WortsalatDbConnector implements IWortsalatDbConstants {
+public final class DbConnection {
 
-	private static WortsalatDbConnector instance;
+	private static DbConnection instance;
+	private DbManager dbm;
 	private Connection con;
 
-	static WortsalatDbConnector getInstance() {
-		if (WortsalatDbConnector.instance == null) {
-			WortsalatDbConnector.setInstance(new WortsalatDbConnector());
+	static DbConnection getInstance() {
+		if (DbConnection.instance == null) {
+			DbConnection.setInstance(new DbConnection());
 		}
-		return WortsalatDbConnector.instance;
+		return DbConnection.instance;
 	}
 
-	private static void setInstance(WortsalatDbConnector instance) {
-		WortsalatDbConnector.instance = instance;
+	private static void setInstance(DbConnection instance) {
+		DbConnection.instance = instance;
+	}
+
+	@SuppressWarnings("unused")
+	private DbManager getDbm() {
+		return dbm;
+	}
+
+	private void setDbm(DbManager dbm) {
+		this.dbm = dbm;
 	}
 
 	Connection getCon() throws SQLException {
@@ -34,19 +44,20 @@ public class WortsalatDbConnector implements IWortsalatDbConstants {
 		this.con = con;
 	}
 
-	private WortsalatDbConnector(Connection con) {
+	private DbConnection(Connection con, DbManager dbm) {
 		super();
 		this.setCon(con);
+		this.setDbm(dbm);
 	}
 
-	private WortsalatDbConnector() {
-		this(null);
+	private DbConnection() {
+		this(null, DbManager.getInstance());
 	}
 
 	void connect() {
 		try {
-			Class.forName(CLASS_NAME);
-			this.setCon(DriverManager.getConnection(CONNECTION));
+			Class.forName(DbManager.CLASS_NAME);
+			this.setCon(DriverManager.getConnection(DbManager.CONNECTION));
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (SQLException e) {

@@ -2,7 +2,7 @@ package de.rainer.buchstabensalat.gui.button.actionlistener;
 
 import de.rainer.buchstabensalat.gui.panel.BuchstabensalatPanel;
 
-public abstract class AActionListenerInklBuchstabensalatPanel implements
+abstract class AActionListenerInklBuchstabensalatPanel implements
 		IActionListener {
 
 	private BuchstabensalatPanel bsp;

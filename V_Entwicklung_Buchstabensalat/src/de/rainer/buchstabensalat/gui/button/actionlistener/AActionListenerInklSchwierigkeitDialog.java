@@ -4,8 +4,7 @@ import java.awt.event.ActionListener;
 
 import de.rainer.buchstabensalat.gui.dialog.SchwierigkeitDialog;
 
-public abstract class AActionListenerInklSchwierigkeitDialog implements
-		ActionListener {
+abstract class AActionListenerInklSchwierigkeitDialog implements ActionListener {
 
 	private SchwierigkeitDialog dialog;
 
