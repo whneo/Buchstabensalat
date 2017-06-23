@@ -10,7 +10,6 @@ import java.sql.Statement;
 public final class DbDefinition {
 
 	private static DbDefinition instance;
-	private DbManager dbm;
 
 	static DbDefinition getInstance() {
 		if (DbDefinition.instance == null) {
@@ -23,21 +22,8 @@ public final class DbDefinition {
 		DbDefinition.instance = instance;
 	}
 
-	DbManager getDbm() {
-		return dbm;
-	}
-
-	private void setDbm(DbManager dbm) {
-		this.dbm = dbm;
-	}
-
-	private DbDefinition(DbManager dbm) {
-		super();
-		this.setDbm(dbm);
-	}
-
 	private DbDefinition() {
-		this(DbManager.getInstance());
+		super();
 	}
 
 	public void createDatabase() {
@@ -45,12 +31,12 @@ public final class DbDefinition {
 			String sql = this.readSqlFile(DbManager.DDL_FILE);
 			Statement st = null;
 			try {
-				st = this.getDbm().getDbCon().getCon().createStatement();
+				st = DbConnection.getInstance().getCon().createStatement();
 				st.executeUpdate(sql);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
-				this.getDbm().getDbCon().closeStatemant(st);
+				DbConnection.getInstance().closeStatemant(st);
 			}
 			this.fillDatabase();
 		}
@@ -91,12 +77,12 @@ public final class DbDefinition {
 		String sql = this.readSqlFile(DbManager.DML_FILE);
 		Statement st = null;
 		try {
-			st = this.getDbm().getDbCon().getCon().createStatement();
+			st = DbConnection.getInstance().getCon().createStatement();
 			st.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			this.getDbm().getDbCon().closeStatemant(st);
+			DbConnection.getInstance().closeStatemant(st);
 		}
 	}
 }

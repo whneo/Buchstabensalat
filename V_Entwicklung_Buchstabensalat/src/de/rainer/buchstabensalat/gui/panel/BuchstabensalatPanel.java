@@ -17,10 +17,10 @@ import de.rainer.buchstabensalat.gui.button.AufloesenButton;
 import de.rainer.buchstabensalat.gui.button.BeendenButton;
 import de.rainer.buchstabensalat.gui.button.SessionContinueButton;
 import de.rainer.buchstabensalat.gui.button.SessionStartButton;
-import de.rainer.buchstabensalat.gui.label.GameTextLabel;
-import de.rainer.buchstabensalat.gui.label.funktional.LetterGameLabel;
-import de.rainer.buchstabensalat.gui.label.funktional.PlaceGameLabel;
-import de.rainer.buchstabensalat.gui.label.funktional.SolutionGameLabel;
+import de.rainer.buchstabensalat.gui.label.TextLabel;
+import de.rainer.buchstabensalat.gui.label.LetterGameLabel;
+import de.rainer.buchstabensalat.gui.label.PlaceGameLabel;
+import de.rainer.buchstabensalat.gui.label.SolutionGameLabel;
 
 public class BuchstabensalatPanel extends JPanel {
 
@@ -78,15 +78,15 @@ public class BuchstabensalatPanel extends JPanel {
 		super.setLayout(new BorderLayout());
 		BeendenButton beenden = new BeendenButton();
 		this.setAufloesen(new AufloesenButton(this));
-		GameTextLabel benutzer = new GameTextLabel(this.getData().getSitzung()
+		TextLabel benutzer = new TextLabel(this.getData().getSitzung()
 				.getBenutzer().getVorname(),
 				new Font("Tahoma", Font.PLAIN, 20), SwingConstants.CENTER);
 		GamePanel northCenterNorth = new GamePanel(new BorderLayout(),
 				Color.YELLOW);
-		GameTextLabel ueberschrift = new GameTextLabel("Buschstabensalat",
+		TextLabel ueberschrift = new TextLabel("Buschstabensalat",
 				new Font("Tahoma", Font.BOLD, 30), SwingConstants.CENTER);
 		northCenterNorth.add(ueberschrift, BorderLayout.CENTER);
-		GameTextLabel level = new GameTextLabel(BuchstabensalatPanel.this
+		TextLabel level = new TextLabel(BuchstabensalatPanel.this
 				.getData().getSitzung().getSchwierigkeit().getName(), new Font(
 				"Tahoma", Font.BOLD, 20), SwingConstants.CENTER);
 		northCenterNorth.add(level, BorderLayout.SOUTH);
@@ -132,7 +132,7 @@ public class BuchstabensalatPanel extends JPanel {
 			this.setGameLabel(str, pointOfStart);
 			int pointOfEnd = pointOfStart + (str.length() * 65)
 					+ ((str.length() - 1) * 10);
-			GameTextLabel label = new GameTextLabel(this.getData().getSitzung()
+			TextLabel label = new TextLabel(this.getData().getSitzung()
 					.getBenutzer().getWortliste().getName(), new Font("Tahoma",
 					Font.BOLD, 35), SwingConstants.CENTER);
 			label.setBounds(pointOfStart, 710, pointOfEnd - pointOfStart, 65);
@@ -164,7 +164,7 @@ public class BuchstabensalatPanel extends JPanel {
 			this.setGameLabel(str, pointOfStart);
 			int pointOfEnd = pointOfStart + (str.length() * 65)
 					+ ((str.length() - 1) * 10);
-			GameTextLabel label = new GameTextLabel(this.getData().getSitzung()
+			TextLabel label = new TextLabel(this.getData().getSitzung()
 					.getBenutzer().getWortliste().getName(), new Font("Tahoma",
 					Font.BOLD, 35), SwingConstants.CENTER);
 			label.setBounds(pointOfStart, 710, pointOfEnd - pointOfStart, 65);

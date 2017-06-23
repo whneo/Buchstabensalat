@@ -3,8 +3,8 @@ package de.rainer.buchstabensalat.data;
 import java.util.ArrayList;
 
 import de.rainer.buchstabensalat.datenobjekt.Sitzung;
-import de.rainer.buchstabensalat.gui.label.funktional.LetterGameLabel;
-import de.rainer.buchstabensalat.gui.label.funktional.PlaceGameLabel;
+import de.rainer.buchstabensalat.gui.label.LetterGameLabel;
+import de.rainer.buchstabensalat.gui.label.PlaceGameLabel;
 
 public class DataProvider {
 

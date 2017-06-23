@@ -11,7 +11,7 @@ import javax.swing.border.LineBorder;
 
 import de.rainer.buchstabensalat.gui.button.ExitButton;
 import de.rainer.buchstabensalat.gui.button.GameStartButton;
-import de.rainer.buchstabensalat.gui.label.GameTextLabel;
+import de.rainer.buchstabensalat.gui.label.TextLabel;
 
 public class StartPanel extends JPanel {
 
@@ -24,7 +24,7 @@ public class StartPanel extends JPanel {
 		super.setBorder(new LineBorder(Color.BLACK, 1));
 		GamePanel northCenterNorth = new GamePanel(new BorderLayout(),
 				Color.YELLOW);
-		GameTextLabel ueberschrift = new GameTextLabel("Buchstabensalat",
+		TextLabel ueberschrift = new TextLabel("Buchstabensalat",
 				new Font("Tahoma", Font.BOLD, 30), SwingConstants.CENTER);
 		northCenterNorth.add(ueberschrift, BorderLayout.CENTER);
 		GamePanel northCenter = new GamePanel(new LineBorder(Color.BLACK, 1),

@@ -12,8 +12,9 @@ import javax.swing.border.LineBorder;
 import de.rainer.buchstabensalat.data.DataProvider;
 import de.rainer.buchstabensalat.gui.button.ExitButton;
 import de.rainer.buchstabensalat.gui.button.PlayAgainButton;
-import de.rainer.buchstabensalat.gui.label.GameTextLabel;
-import de.rainer.buchstabensalat.gui.label.SpielendeLabel;
+import de.rainer.buchstabensalat.gui.label.TextLabel;
+import de.rainer.buchstabensalat.gui.label.SpielendeFalschLabel;
+import de.rainer.buchstabensalat.gui.label.SpielendeRichtigLabel;
 
 public class SpielendePanel extends JPanel {
 
@@ -29,10 +30,10 @@ public class SpielendePanel extends JPanel {
 		super.setBorder(new LineBorder(Color.BLACK, 1));
 		GamePanel northCenterNorth = new GamePanel(new BorderLayout(),
 				Color.YELLOW);
-		GameTextLabel ueberschrift = new GameTextLabel("Buchstabensalat",
+		TextLabel ueberschrift = new TextLabel("Buchstabensalat",
 				new Font("Tahoma", Font.BOLD, 30), SwingConstants.CENTER);
 		northCenterNorth.add(ueberschrift, BorderLayout.CENTER);
-		GameTextLabel label = new GameTextLabel(DataProvider.getInstance()
+		TextLabel label = new TextLabel(DataProvider.getInstance()
 				.getSitzung().getSchwierigkeit().getName(), new Font("Tahoma",
 				Font.BOLD, 20), SwingConstants.CENTER);
 		northCenterNorth.add(label, BorderLayout.SOUTH);
@@ -48,17 +49,17 @@ public class SpielendePanel extends JPanel {
 	private void initCenter() {
 		GamePanel center = new GamePanel(new LineBorder(Color.BLACK, 1), null,
 				Color.YELLOW);
-		GameTextLabel endeLabel = new GameTextLabel(
+		TextLabel endeLabel = new TextLabel(
 				"<html><center>Runde beendet</center></html>", new Font(
 						"Tahoma", Font.BOLD, 30), SwingConstants.CENTER);
 		endeLabel.setBounds(570, 0, 420, 100);
 		center.add(endeLabel);
-		SpielendeLabel richtig = new SpielendeLabel(
+		SpielendeRichtigLabel richtig = new SpielendeRichtigLabel(
 				"<html><center>Richtig</center><br><center>"
 						+ DataProvider.getInstance().getSitzung()
 								.getRichtigeWorte() + "</center></html>");
 		center.add(richtig);
-		SpielendeLabel falsch = new SpielendeLabel(
+		SpielendeFalschLabel falsch = new SpielendeFalschLabel(
 				"<html><body><center>Falsch</center><br><center>"
 						+ DataProvider.getInstance().getSitzung()
 								.getFalscheWorte() + "</center></body></html>");

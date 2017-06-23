@@ -4,10 +4,10 @@ import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import de.rainer.buchstabensalat.gui.label.funktional.LetterGameLabel;
-import de.rainer.buchstabensalat.gui.label.funktional.logik.PlaceGameLabelLogik;
+import de.rainer.buchstabensalat.data.DataProvider;
+import de.rainer.buchstabensalat.gui.label.LetterGameLabel;
 
-public class LetterGameLabelMouseAdapter extends MouseAdapter {
+public final class LetterGameLabelMouseAdapter extends MouseAdapter {
 
 	private LetterGameLabel lgl;
 
@@ -32,7 +32,8 @@ public class LetterGameLabelMouseAdapter extends MouseAdapter {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		PlaceGameLabelLogik.intersect((LetterGameLabel) e.getSource());
+		DataProvider.getInstance().getPlaceList().get(0)
+				.intersect((LetterGameLabel) e.getSource());
 	}
 
 	@Override

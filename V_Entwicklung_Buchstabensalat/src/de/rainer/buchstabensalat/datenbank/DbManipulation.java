@@ -10,7 +10,6 @@ import de.rainer.buchstabensalat.datenobjekt.Sitzung;
 public final class DbManipulation {
 
 	private static DbManipulation instance;
-	private DbManager dbm;
 
 	static DbManipulation getInstance() {
 		if (DbManipulation.instance == null) {
@@ -23,21 +22,8 @@ public final class DbManipulation {
 		DbManipulation.instance = instance;
 	}
 
-	DbManager getDbm() {
-		return dbm;
-	}
-
-	private void setDbm(DbManager dbm) {
-		this.dbm = dbm;
-	}
-
-	private DbManipulation(DbManager dbm) {
-		super();
-		this.setDbm(dbm);
-	}
-
 	private DbManipulation() {
-		this(DbManager.getInstance());
+		super();
 	}
 
 	public void insert(Sitzung sitzung) {
@@ -45,7 +31,7 @@ public final class DbManipulation {
 		Statement st = null;
 		String sql = "INSERT INTO Sitzung (spielBeginn, spielEnde, richtigeWorte, falscheWorte, benutzer_id, schwierigkeit_id) VALUES (?, ?, ?, ?, ?, ?)";
 		try {
-			pst = this.getDbm().getDbCon().getCon().prepareStatement(sql);
+			pst = DbConnection.getInstance().getCon().prepareStatement(sql);
 			pst.setLong(1, sitzung.getSpielBeginn());
 			pst.setLong(2, sitzung.getSpielEnde());
 			pst.setInt(3, sitzung.getRichtigeWorte());
@@ -56,8 +42,8 @@ public final class DbManipulation {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			this.getDbm().getDbCon().closePreparedStatement(pst);
-			this.getDbm().getDbCon().closeStatemant(st);
+			DbConnection.getInstance().closePreparedStatement(pst);
+			DbConnection.getInstance().closeStatemant(st);
 		}
 	}
 
@@ -65,7 +51,7 @@ public final class DbManipulation {
 		Statement st = null;
 		ResultSet rst = null;
 		try {
-			st = this.getDbm().getDbCon().getCon().createStatement();
+			st = DbConnection.getInstance().getCon().createStatement();
 			rst = st.executeQuery(query);
 		} catch (SQLException e) {
 			e.printStackTrace();

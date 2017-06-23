@@ -1,4 +1,4 @@
-package de.rainer.buchstabensalat.gui.label.funktional.logik;
+package de.rainer.buchstabensalat.gui.label;
 
 import java.awt.Color;
 import java.awt.Point;
@@ -7,44 +7,59 @@ import java.awt.Rectangle;
 import javax.swing.JLabel;
 
 import de.rainer.buchstabensalat.data.DataProvider;
-import de.rainer.buchstabensalat.gui.label.funktional.LetterGameLabel;
-import de.rainer.buchstabensalat.gui.label.funktional.PlaceGameLabel;
 
-public class PlaceGameLabelLogik {
+public final class PlaceGameLabel extends AStatBuchstabenLabel {
 
-	public static Point linkeEckeOben(JLabel label) {
+	private static final long serialVersionUID = 1L;
+
+	public PlaceGameLabel(int x, char text) {
+		super("" + text, Color.LIGHT_GRAY);
+		if (DataProvider.getInstance().getPlaceList().size() != 0) {
+			x = DataProvider.getInstance().getPlaceList()
+					.get(DataProvider.getInstance().getPlaceList().size() - 1)
+					.getX() + 75;
+		}
+		this.setBounds(x, 635, LETTER_LABEL_SIZE, LETTER_LABEL_SIZE);
+		DataProvider.getInstance().getPlaceList().add(this);
+	}
+
+	public PlaceGameLabel(int x) {
+		this(x, '?');
+	}
+
+	private Point linkeEckeOben(JLabel label) {
 		return label.getLocation();
 	}
 
-	public static Point linkeEckeUnten(JLabel label) {
+	private Point linkeEckeUnten(JLabel label) {
 		return new Point((int) label.getLocation().getX(), (int) label
 				.getLocation().getY() + 65);
 	}
 
-	public static Point rechteEckeOben(JLabel label) {
+	private Point rechteEckeOben(JLabel label) {
 		return new Point((int) label.getLocation().getX() + 65, (int) label
 				.getLocation().getY());
 	}
 
-	public static Point rechteEckeUnten(JLabel label) {
+	private Point rechteEckeUnten(JLabel label) {
 		return new Point((int) label.getLocation().getX() + 65, (int) label
 				.getLocation().getY() + 65);
 	}
 
-	public static void intersect(LetterGameLabel lgl) {
+	public void intersect(LetterGameLabel lgl) {
 		Rectangle raOrigin = new Rectangle(lgl.getWidth(), lgl.getHeight());
-		Point letterLo = LetterGameLabelLogik.linkeEckeOben(lgl);
-		Point letterLu = LetterGameLabelLogik.linkeEckeUnten(lgl);
-		Point letterRo = LetterGameLabelLogik.rechteEckeOben(lgl);
-		Point letterRu = LetterGameLabelLogik.rechteEckeUnten(lgl);
+		Point letterLo = this.linkeEckeOben(lgl);
+		Point letterLu = this.linkeEckeUnten(lgl);
+		Point letterRo = this.rechteEckeOben(lgl);
+		Point letterRu = this.rechteEckeUnten(lgl);
 		for (int i = 0; i < DataProvider.getInstance().getPlaceList().size(); i++) {
 			PlaceGameLabel pgl = DataProvider.getInstance().getPlaceList()
 					.get(i);
 			if (pgl.getText().equals("")) {
-				Point placeLo = PlaceGameLabelLogik.linkeEckeOben(pgl);
-				Point placeLu = PlaceGameLabelLogik.linkeEckeUnten(pgl);
-				Point placeRo = PlaceGameLabelLogik.rechteEckeOben(pgl);
-				Point placeRu = PlaceGameLabelLogik.rechteEckeUnten(pgl);
+				Point placeLo = this.linkeEckeOben(pgl);
+				Point placeLu = this.linkeEckeUnten(pgl);
+				Point placeRo = this.rechteEckeOben(pgl);
+				Point placeRu = this.rechteEckeUnten(pgl);
 				if ((letterLo.getX() >= (int) placeLo.getX() && letterLo.getY() >= (int) placeLo
 						.getY())
 						&& (letterLo.getX() <= (int) placeRu.getX() && letterLo
