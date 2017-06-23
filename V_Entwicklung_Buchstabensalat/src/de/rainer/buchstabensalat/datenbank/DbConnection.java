@@ -10,7 +10,6 @@ import java.sql.Statement;
 public final class DbConnection {
 
 	private static DbConnection instance;
-	private DbManager dbm;
 	private Connection con;
 
 	static DbConnection getInstance() {
@@ -24,15 +23,6 @@ public final class DbConnection {
 		DbConnection.instance = instance;
 	}
 
-	@SuppressWarnings("unused")
-	private DbManager getDbm() {
-		return dbm;
-	}
-
-	private void setDbm(DbManager dbm) {
-		this.dbm = dbm;
-	}
-
 	Connection getCon() throws SQLException {
 		if (this.con == null || this.con.isClosed()) {
 			this.connect();
@@ -44,14 +34,13 @@ public final class DbConnection {
 		this.con = con;
 	}
 
-	private DbConnection(Connection con, DbManager dbm) {
+	private DbConnection(Connection con) {
 		super();
 		this.setCon(con);
-		this.setDbm(dbm);
 	}
 
 	private DbConnection() {
-		this(null, DbManager.getInstance());
+		this(null);
 	}
 
 	void connect() {
