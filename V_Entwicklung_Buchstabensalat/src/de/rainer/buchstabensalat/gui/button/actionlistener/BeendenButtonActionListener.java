@@ -2,6 +2,8 @@ package de.rainer.buchstabensalat.gui.button.actionlistener;
 
 import java.awt.event.ActionEvent;
 
+import de.rainer.buchstabensalat.schnittstelle.IActionListener;
+
 public final class BeendenButtonActionListener implements IActionListener {
 
 	@Override

@@ -1,6 +1,7 @@
 package de.rainer.buchstabensalat.gui.button.actionlistener;
 
 import de.rainer.buchstabensalat.gui.panel.BuchstabensalatPanel;
+import de.rainer.buchstabensalat.schnittstelle.IActionListener;
 
 abstract class AActionListenerInklBuchstabensalatPanel implements
 		IActionListener {

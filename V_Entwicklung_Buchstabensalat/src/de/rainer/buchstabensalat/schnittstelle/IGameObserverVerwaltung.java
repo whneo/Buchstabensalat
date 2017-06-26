@@ -1,4 +1,4 @@
-package de.rainer.buchstabensalat.data;
+package de.rainer.buchstabensalat.schnittstelle;
 
 public interface IGameObserverVerwaltung {
 	public abstract void addGameObserver(IGameObserver gameObserver);

@@ -1,7 +1,6 @@
 package de.rainer.buchstabensalat.schnittstelle;
 
 import de.rainer.buchstabensalat.data.DataProvider;
-import de.rainer.buchstabensalat.data.IExternObserver;
 import de.rainer.buchstabensalat.datenbank.DbManager;
 import de.rainer.buchstabensalat.datenobjekt.Benutzer;
 import de.rainer.buchstabensalat.datenobjekt.Statistik;
