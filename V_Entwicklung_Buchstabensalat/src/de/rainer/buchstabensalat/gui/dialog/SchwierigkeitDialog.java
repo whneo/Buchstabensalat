@@ -12,7 +12,7 @@ import javax.swing.border.LineBorder;
 import de.rainer.buchstabensalat.gui.button.AbbruchButton;
 import de.rainer.buchstabensalat.gui.button.SchwierigkeitButton;
 import de.rainer.buchstabensalat.gui.label.TextLabel;
-import de.rainer.buchstabensalat.gui.panel.GamePanel;
+import de.rainer.buchstabensalat.gui.panel.DefaultPanel;
 
 public class SchwierigkeitDialog extends JDialog {
 
@@ -33,13 +33,13 @@ public class SchwierigkeitDialog extends JDialog {
 		super.setBounds(x, y, width, height);
 		super.setUndecorated(true);
 		super.setModal(true);
-		GamePanel panel = new GamePanel(new LineBorder(Color.BLACK, 2),
+		DefaultPanel panel = new DefaultPanel(new LineBorder(Color.BLACK, 2),
 				new BorderLayout(), Color.WHITE);
-		GamePanel labelPanel = new GamePanel(Color.WHITE);
+		DefaultPanel labelPanel = new DefaultPanel(Color.WHITE);
 		TextLabel label = new TextLabel("Schwierigkeitsgrad", new Font(
 				"Tahoma", Font.BOLD, 30));
 		labelPanel.add(label);
-		GamePanel buttonPanel = new GamePanel(Color.WHITE);
+		DefaultPanel buttonPanel = new DefaultPanel(Color.WHITE);
 		SchwierigkeitButton lButton = new SchwierigkeitButton("leicht", this);
 		SchwierigkeitButton mButton = new SchwierigkeitButton("mittel", this);
 		SchwierigkeitButton sButton = new SchwierigkeitButton("schwer", this);

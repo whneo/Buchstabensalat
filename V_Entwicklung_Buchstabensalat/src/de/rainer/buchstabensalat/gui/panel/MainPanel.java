@@ -9,7 +9,7 @@ import javax.swing.border.LineBorder;
 import de.rainer.buchstabensalat.data.DataProvider;
 import de.rainer.buchstabensalat.data.IGameObserver;
 
-public class MainPanel extends JPanel implements IGameObserver {
+public class MainPanel extends DefaultPanel implements IGameObserver {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel main;
@@ -23,24 +23,22 @@ public class MainPanel extends JPanel implements IGameObserver {
 	}
 
 	public MainPanel(JPanel main) {
-		super();
+		super(new LineBorder(Color.BLACK, 2), new BorderLayout(), Color.WHITE);
 		DataProvider.getInstance().getGameObserver().addGameObserver(this);
 		this.setMain(main);
 		this.init();
 	}
 
 	public MainPanel() {
-		this(new GamePanel(new LineBorder(Color.BLACK, 2), new BorderLayout(),
-				Color.YELLOW));
+		this(new DefaultPanel(new LineBorder(Color.BLACK, 2),
+				new BorderLayout(), Color.YELLOW));
 	}
 
 	private void init() {
-		super.setLayout(new BorderLayout());
-		super.setBorder(new LineBorder(Color.BLACK, 2));
-		GamePanel north = new GamePanel(Color.WHITE);
-		GamePanel south = new GamePanel(Color.WHITE);
-		GamePanel east = new GamePanel(Color.WHITE);
-		GamePanel west = new GamePanel(Color.WHITE);
+		DefaultPanel north = new DefaultPanel(Color.WHITE);
+		DefaultPanel south = new DefaultPanel(Color.WHITE);
+		DefaultPanel east = new DefaultPanel(Color.WHITE);
+		DefaultPanel west = new DefaultPanel(Color.WHITE);
 		this.setMain(new StartPanel());
 		super.add(north, BorderLayout.NORTH);
 		super.add(south, BorderLayout.SOUTH);
