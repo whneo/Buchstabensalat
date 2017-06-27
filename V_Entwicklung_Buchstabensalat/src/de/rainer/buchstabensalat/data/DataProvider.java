@@ -6,7 +6,7 @@ import de.rainer.buchstabensalat.datenobjekt.Sitzung;
 import de.rainer.buchstabensalat.gui.label.LetterGameLabel;
 import de.rainer.buchstabensalat.gui.label.PlaceGameLabel;
 
-public class DataProvider {
+public final class DataProvider {
 
 	private static DataProvider instance;
 	private GameObserver gameObserver;
