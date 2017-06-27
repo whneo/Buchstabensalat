@@ -2,9 +2,12 @@ package de.rainer.buchstabensalat.data;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 import de.rainer.buchstabensalat.schnittstelle.IExternObserver;
 import de.rainer.buchstabensalat.schnittstelle.IExternObserverVariablenVerwaltung;
 
+=======
+>>>>>>> branch 'master' of https://github.com/whneo/Buchstabensalat.git
 public class ExternObserver implements IExternObserverVariablenVerwaltung {
 
 	private ArrayList<IExternObserver> externObserverList;

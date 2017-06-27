@@ -2,9 +2,12 @@ package de.rainer.buchstabensalat.data;
 
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 import de.rainer.buchstabensalat.schnittstelle.IGameObserver;
 import de.rainer.buchstabensalat.schnittstelle.IGameObserverVariablenVerwaltung;
 
+=======
+>>>>>>> branch 'master' of https://github.com/whneo/Buchstabensalat.git
 public class GameObserver implements IGameObserverVariablenVerwaltung {
 
 	private ArrayList<IGameObserver> gameObserverList;

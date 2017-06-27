@@ -1,6 +1,10 @@
 package de.rainer.buchstabensalat.schnittstelle;
 
 import de.rainer.buchstabensalat.data.DataProvider;
+<<<<<<< HEAD
+=======
+import de.rainer.buchstabensalat.data.IExternObserver;
+>>>>>>> branch 'master' of https://github.com/whneo/Buchstabensalat.git
 import de.rainer.buchstabensalat.datenbank.DbManager;
 import de.rainer.buchstabensalat.datenobjekt.Benutzer;
 import de.rainer.buchstabensalat.datenobjekt.Statistik;

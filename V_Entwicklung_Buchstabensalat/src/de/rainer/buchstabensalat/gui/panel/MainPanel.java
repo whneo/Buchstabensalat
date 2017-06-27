@@ -7,7 +7,11 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import de.rainer.buchstabensalat.data.DataProvider;
+<<<<<<< HEAD
 import de.rainer.buchstabensalat.schnittstelle.IGameObserver;
+=======
+import de.rainer.buchstabensalat.data.IGameObserver;
+>>>>>>> branch 'master' of https://github.com/whneo/Buchstabensalat.git
 
 public class MainPanel extends DefaultPanel implements IGameObserver {
 

@@ -5,7 +5,10 @@ import java.awt.event.WindowEvent;
 
 import de.rainer.buchstabensalat.datenobjekt.Schwierigkeit;
 import de.rainer.buchstabensalat.gui.dialog.SchwierigkeitDialog;
+<<<<<<< HEAD
 import de.rainer.buchstabensalat.schnittstelle.IDataProvider;
+=======
+>>>>>>> branch 'master' of https://github.com/whneo/Buchstabensalat.git
 
 public final class SchwierigkeitButtonActionListener extends
 		AActionListenerInklSchwierigkeitDialog implements IDataProvider {
