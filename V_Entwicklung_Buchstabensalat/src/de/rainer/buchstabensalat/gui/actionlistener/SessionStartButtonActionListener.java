@@ -1,10 +1,10 @@
-package de.rainer.buchstabensalat.gui.button.actionlistener;
+package de.rainer.buchstabensalat.gui.actionlistener;
 
 import java.awt.event.ActionEvent;
 
 import de.rainer.buchstabensalat.gui.panel.BuchstabensalatPanel;
 
-public class SessionStartButtonActionListener extends
+public final class SessionStartButtonActionListener extends
 		AActionListenerInklBuchstabensalatPanel {
 
 	public SessionStartButtonActionListener(BuchstabensalatPanel bsp) {

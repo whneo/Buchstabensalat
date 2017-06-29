@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.gui.button;
 import java.awt.Color;
 import java.awt.Point;
 
-import de.rainer.buchstabensalat.gui.button.actionlistener.SessionContinueButtonActionListener;
+import de.rainer.buchstabensalat.gui.actionlistener.SessionContinueButtonActionListener;
 import de.rainer.buchstabensalat.gui.panel.BuchstabensalatPanel;
 
 public final class SessionContinueButton extends FieldButton {

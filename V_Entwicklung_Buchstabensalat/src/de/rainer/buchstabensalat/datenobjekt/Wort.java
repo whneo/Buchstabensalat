@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import de.rainer.buchstabensalat.datenbank.DbManager;
 
-public class Wort {
+public final class Wort {
 
 	private int wort_id;
 	private String name;

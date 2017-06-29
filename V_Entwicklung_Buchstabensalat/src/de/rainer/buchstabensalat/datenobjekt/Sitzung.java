@@ -2,7 +2,7 @@ package de.rainer.buchstabensalat.datenobjekt;
 
 import de.rainer.buchstabensalat.datenbank.DbManager;
 
-public class Sitzung {
+public final class Sitzung {
 
 	private int sitzung_id;
 	private long spielBeginn;

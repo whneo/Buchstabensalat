@@ -2,7 +2,7 @@ package de.rainer.buchstabensalat.gui.button;
 
 import java.awt.Font;
 
-import de.rainer.buchstabensalat.gui.button.actionlistener.AufloesenButtonActionListener;
+import de.rainer.buchstabensalat.gui.actionlistener.AufloesenButtonActionListener;
 import de.rainer.buchstabensalat.gui.panel.BuchstabensalatPanel;
 
 public final class AufloesenButton extends MainButton {

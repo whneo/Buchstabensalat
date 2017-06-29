@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.gui.button;
 import java.awt.Color;
 import java.awt.Point;
 
-import de.rainer.buchstabensalat.gui.button.actionlistener.GameStartButtonActionListener;
+import de.rainer.buchstabensalat.gui.actionlistener.GameStartButtonActionListener;
 
 public final class GameStartButton extends FieldButton {
 

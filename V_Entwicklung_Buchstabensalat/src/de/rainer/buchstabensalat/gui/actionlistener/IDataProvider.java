@@ -1,4 +1,4 @@
-package de.rainer.buchstabensalat.gui.button.actionlistener;
+package de.rainer.buchstabensalat.gui.actionlistener;
 
 import de.rainer.buchstabensalat.data.DataProvider;
 

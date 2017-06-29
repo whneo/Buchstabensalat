@@ -1,9 +1,8 @@
-package de.rainer.buchstabensalat.gui.button.actionlistener;
+package de.rainer.buchstabensalat.gui.actionlistener;
 
 import java.awt.event.ActionEvent;
 
 import de.rainer.buchstabensalat.gui.dialog.SchwierigkeitDialog;
-import de.rainer.buchstabensalat.schnittstelle.IActionListener;
 
 public final class PlayAgainButtonActionListener implements IActionListener {
 

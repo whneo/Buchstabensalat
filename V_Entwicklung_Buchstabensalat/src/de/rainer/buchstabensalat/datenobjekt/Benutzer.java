@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import de.rainer.buchstabensalat.datenbank.DbManager;
 
-public class Benutzer {
+public final class Benutzer {
 
 	private int benutzer_id;
 	private String login;

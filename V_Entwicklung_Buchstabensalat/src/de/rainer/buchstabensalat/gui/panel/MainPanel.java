@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import de.rainer.buchstabensalat.data.DataProvider;
-import de.rainer.buchstabensalat.schnittstelle.IGameObserver;
+import de.rainer.buchstabensalat.data.IGameObserver;
 
 public class MainPanel extends DefaultPanel implements IGameObserver {
 

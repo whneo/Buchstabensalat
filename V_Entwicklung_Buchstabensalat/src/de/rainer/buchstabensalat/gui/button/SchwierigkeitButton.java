@@ -2,7 +2,7 @@ package de.rainer.buchstabensalat.gui.button;
 
 import java.awt.Font;
 
-import de.rainer.buchstabensalat.gui.button.actionlistener.SchwierigkeitButtonActionListener;
+import de.rainer.buchstabensalat.gui.actionlistener.SchwierigkeitButtonActionListener;
 import de.rainer.buchstabensalat.gui.dialog.SchwierigkeitDialog;
 
 public final class SchwierigkeitButton extends MainButton {

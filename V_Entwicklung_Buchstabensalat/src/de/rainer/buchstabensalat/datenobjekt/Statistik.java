@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import de.rainer.buchstabensalat.datenbank.DbManager;
 
-public class Statistik {
+public final class Statistik {
 
 	private Benutzer benutzer;
 	private ArrayList<Sitzung> sitzungen;

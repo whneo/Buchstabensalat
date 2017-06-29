@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 import de.rainer.buchstabensalat.datenbank.DbManager;
 
-public class Schwierigkeit {
+public final class Schwierigkeit {
 
 	private int schwierigkeit_id;
 	private String name;

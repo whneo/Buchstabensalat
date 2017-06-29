@@ -1,4 +1,4 @@
-package de.rainer.buchstabensalat.schnittstelle;
+package de.rainer.buchstabensalat.data;
 
 public interface IExternObserverVerwaltung {
 	public abstract void addExternObserver(IExternObserver externObserver);

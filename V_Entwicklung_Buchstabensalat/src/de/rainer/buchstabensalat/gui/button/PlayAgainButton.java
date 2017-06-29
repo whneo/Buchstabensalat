@@ -3,7 +3,7 @@ package de.rainer.buchstabensalat.gui.button;
 import java.awt.Color;
 import java.awt.Point;
 
-import de.rainer.buchstabensalat.gui.button.actionlistener.PlayAgainButtonActionListener;
+import de.rainer.buchstabensalat.gui.actionlistener.PlayAgainButtonActionListener;
 
 public final class PlayAgainButton extends FieldButton {
 
